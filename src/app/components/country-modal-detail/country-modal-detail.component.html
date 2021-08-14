@@ -1,0 +1,64 @@
+<div
+  [ngClass]="{
+    'd-none': !(countryModalService.isOpen$ | async)
+  }"
+>
+  <div class="modal-view" *ngIf="countryModalService.data$ | async as country">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLiveLabel">
+          {{ country.name }}
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="countryModalService.close()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <table>
+          <tr>
+            <td>Pais</td>
+            <td>
+              {{ country.name }}
+
+              <img [src]="country.flag" width="20px" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>Capital</td>
+            <td>
+              {{ country.capital }}
+            </td>
+          </tr>
+          <tr>
+            <td>Siglas</td>
+            <td>
+              {{ country.cioc }}
+            </td>
+          </tr>
+          <tr>
+            <td>Continente</td>
+            <td>
+              {{ country.region }}
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+          (click)="countryModalService.close()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="overlay"></div>
+</div>

@@ -1,0 +1,14 @@
+<app-loader
+  *ngIf="(countriesService.countries$ | async).length == 0"
+></app-loader>
+
+<div class="containt-paises">
+  <div class="d-grid d-column-3">
+    <app-country-card
+      *ngFor="let country of countriesService.countries$ | async"
+      [data]="country"
+    ></app-country-card>
+  </div>
+</div>
+
+<app-country-modal-detail></app-country-modal-detail>
