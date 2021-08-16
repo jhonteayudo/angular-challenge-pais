@@ -7,18 +7,12 @@ import { CountryModalDetailService } from '../country-modal-detail/country-modal
   styleUrls: ['./country-card.component.scss'],
 })
 export class CountryCardComponent {
-
   @Input() data: any;
 
-  constructor(
-    private CountryModalDetailService: CountryModalDetailService
-  ) { }
+  constructor(private CountryModalDetailService: CountryModalDetailService) {}
 
-  openModalCountry(){
-    
+  openModalCountry() {
     this.CountryModalDetailService.data(this.data);
     this.CountryModalDetailService.open();
-
   }
-
 }
