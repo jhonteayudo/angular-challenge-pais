@@ -7,11 +7,5 @@ import { CountryModalDetailService } from './country-modal-detail.service';
   styleUrls: ['./country-modal-detail.component.scss'],
 })
 export class CountryModalDetailComponent {
-
-  constructor(
-    public countryModalService: CountryModalDetailService
-  ) { }
-
-  
-
+  constructor(public countryModalService: CountryModalDetailService) {}
 }
